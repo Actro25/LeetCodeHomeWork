@@ -1,12 +1,15 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 std::vector<int> twoSum(std::vector<int>& nums, int target) {
+    std::unordered_map<int,int> dic;
     for(int i = 0; i < nums.size(); i++){
-        for(int j = 1 + i; j < nums.size(); j++){
-            if(nums[i] + nums[j] == target){
-                return {i,j};
-            }
+        int difer = target - nums[i];
+        auto t = dic.find(difer);
+        if(t != dic.end()){
+            return {t->second, i};
         }
+        dic.insert({nums[i], i});
     }
     return {0,0};
 }
