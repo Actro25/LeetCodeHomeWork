@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
+//i used to qucksort
 std::vector<int> MySortQuick(std::vector<int>& heights){
 	if(heights.size() <= 1){
 		return heights;
