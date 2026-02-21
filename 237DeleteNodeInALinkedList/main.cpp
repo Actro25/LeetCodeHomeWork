@@ -2,7 +2,6 @@
 
 struct ListNode;
 
-
 void deleteNode(ListNode* node) {
     if(node == NULL || node->next == NULL) return;
     if(node->next->next == NULL){
